@@ -4,7 +4,11 @@ func ans(nums []int) []int{
 	
 	left := make([]int,n)
 	right := make([]int,n)
-
+        
+	for i:=0;i<n;i++{
+		left[i] = -1
+		right[i] = n
+	}
 	stack := make([]int,0,n)
 
 	for i,num := range nums{

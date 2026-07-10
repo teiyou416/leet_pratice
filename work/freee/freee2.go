@@ -6,18 +6,23 @@ func solution(reservation [][]int) int{
     }
     start := make([]int,n)
     end := make([]int,n)
+
     for i:=0;i<n;i++{
          start = reservation[i][0]
          end = reservation[i][1]
     }
-    ans := 0
+
+    sort.Ints(start)
+    sort.Ints(end)
+
+    room := 0
     endIdx :=0
     for i:=0;i<n;i++{
 	    if start[i] > end[endIdx]{
-		    ans++
+		    room++
 	    }else{
 		    endIdx++
 	    }
     }
-    return ans
+    return room
 }
